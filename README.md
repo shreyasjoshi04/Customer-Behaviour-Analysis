@@ -1,7 +1,9 @@
 📊 Customer Shopping Behavior Analysis
+
 An end-to-end Data Analytics portfolio project demonstrating the complete analytics workflow using Python, PostgreSQL, SQL, and Power BI. This project transforms raw customer shopping data into actionable business insights through data cleaning, exploratory data analysis, SQL-based business analysis, and an interactive dashboard.
 
-📌 Overview
+📌 Overview 
+
 The objective of this project is to simulate a real-world data analytics workflow followed in organizations. Starting from raw customer shopping data, the project focuses on preparing the data, answering business questions, and presenting insights through an interactive Power BI dashboard.
 
 The project covers:
@@ -195,3 +197,17 @@ This project is intended for learning and portfolio purposes.
 
 🙏 Acknowledgements
 This project was built as part of my learning journey by following the YouTube tutorial "COMPLETE Data Analytics Portfolio Project in 6 EASY Steps | Python + SQL + Power BI" by Amlan Mohanty. I implemented the data cleaning, SQL analysis, and Power BI dashboard while following the tutorial to gain hands-on experience with an end-to-end data analytics workflow.
+
+About
+End-to-end customer shopping behavior analysis using Python, PostgreSQL, SQL, and Power BI.
+
+Resources
+Readme
+MIT license
+Activity
+Stars
+0 stars
+Watchers
+0 watching
+Forks
+0 forks
