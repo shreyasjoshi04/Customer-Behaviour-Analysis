@@ -109,6 +109,7 @@ Purchase Frequency
 Payment Method Distribution
 Discount Analysis
 Interactive Filters & Slicers
+
 📈 Dashboard Preview
 Overall Dashboard
 Dashboard
@@ -129,6 +130,7 @@ Evaluated the impact of discounts on purchasing behavior.
 Analyzed seasonal shopping trends.
 Explored customer purchasing frequency.
 Built an interactive dashboard for business decision-making.
+
 📁 Project Structure
 customer_shopping_behavior_analysis/
 │
@@ -155,9 +157,9 @@ customer_shopping_behavior_analysis/
 ├── .gitignore
 ├── LICENSE
 └── README.md
+
 ▶️ How to Run
 1. Clone the Repository
-git clone https://github.com/awadhanisiddhi/customer_shopping_behavior_analysis.git
 2. Install Required Libraries
 pip install pandas psycopg2
 3. Run the Python Notebook
@@ -196,9 +198,11 @@ End-to-End Data Analytics Workflow
 This project is intended for learning and portfolio purposes.
 
 🙏 Acknowledgements
+
 This project was built as part of my learning journey by following the YouTube tutorial "COMPLETE Data Analytics Portfolio Project in 6 EASY Steps | Python + SQL + Power BI" by Amlan Mohanty. I implemented the data cleaning, SQL analysis, and Power BI dashboard while following the tutorial to gain hands-on experience with an end-to-end data analytics workflow.
 
 About
+
 End-to-end customer shopping behavior analysis using Python, PostgreSQL, SQL, and Power BI.
 
 Resources
