@@ -1,217 +1,466 @@
-📊 Customer Shopping Behavior Analysis
+# Customer Behavior Analysis Dashboard
 
-An end-to-end Data Analytics portfolio project demonstrating the complete analytics workflow using Python, PostgreSQL, SQL, and Power BI. This project transforms raw customer shopping data into actionable business insights through data cleaning, exploratory data analysis, SQL-based business analysis, and an interactive dashboard.
+A complete **Customer Behavior Analysis and Business Intelligence project** that demonstrates an end-to-end data analytics workflow using **Python, SQL, and Microsoft Power BI**.
 
-📌 Overview 
+The project starts with a raw customer dataset, cleans and prepares the data using Python, performs analytical queries using SQL, and finally presents the insights through an interactive Power BI dashboard.
 
-The objective of this project is to simulate a real-world data analytics workflow followed in organizations. Starting from raw customer shopping data, the project focuses on preparing the data, answering business questions, and presenting insights through an interactive Power BI dashboard.
+---
 
-The project covers:
+## 📊 Dashboard Overview
 
-Data Loading
-Exploratory Data Analysis (EDA)
-Data Cleaning
-PostgreSQL Database Integration
-SQL Business Analysis
-Power BI Dashboard Development
-📂 Dataset
-The dataset contains customer shopping behavior information, including:
+The Power BI dashboard provides a high-level view of customer purchasing behavior and sales performance.
 
-Customer ID
-Age
-Gender
-Category
-Item Purchased
-Purchase Amount
-Location
-Size
-Color
-Season
-Review Rating
-Subscription Status
-Payment Method
-Shipping Type
-Discount Applied
-Promo Code Used
-Previous Purchases
-Preferred Payment Method
-Frequency of Purchases
-🛠️ Tools & Technologies
-Tool	Purpose
-Python	Data Loading, Cleaning & Analysis
-Pandas	Data Manipulation
-PostgreSQL	Database Management
-SQL	Business Analysis
-Power BI	Dashboard & Reporting
-Jupyter Notebook	Python Development
-Git & GitHub	Version Control
-🚀 Project Workflow
-Step 1 — Load the Dataset
-Import the CSV dataset using Pandas.
-Explore the dataset structure.
-Inspect rows, columns, and data types.
-Step 2 — Exploratory Data Analysis (EDA)
-Perform an initial analysis to understand the dataset.
+### Key KPIs
+- **Number of Customers**
+- **Average Purchase Amount**
+- **Average Review Rating**
 
-Tasks performed:
+### Dashboard Analysis
+The dashboard includes:
+- Customer distribution by **Subscription Status**
+- **Revenue by Category**
+- **Sales by Category**
+- **Revenue by Age Group**
+- **Sales by Age Group**
+- Interactive filters for:
+  - Subscription Status
+  - Gender
+  - Product Category
+  - Shipping Type
 
-Dataset overview
-Statistical summary
-Missing value analysis
-Duplicate value detection
-Distribution analysis
-Correlation analysis
-Step 3 — Data Cleaning
-Prepare the dataset for further analysis.
+These visuals make it easier to identify customer trends, compare product categories, and understand purchasing behavior across different customer segments.
 
-Cleaning steps include:
+---
 
-Handling missing values
-Removing duplicate records
-Correcting inconsistent data
-Formatting columns
-Preparing the final cleaned dataset
-Step 4 — SQL Analysis (PostgreSQL)
-Load the cleaned dataset into PostgreSQL and answer business questions using SQL.
+## 🔄 Project Workflow
 
-The project includes SQL concepts such as:
+```text
+Raw Dataset
+     │
+     ▼
+Python Data Loading
+     │
+     ▼
+Data Cleaning & Preprocessing
+     │
+     ▼
+Clean Dataset
+     │
+     ▼
+SQL Analysis
+     │
+     ▼
+Business Insights
+     │
+     ▼
+Power BI Data Modeling
+     │
+     ▼
+Interactive Dashboard
+```
 
-SELECT
-WHERE
-ORDER BY
-GROUP BY
-Aggregate Functions
-CASE Statements
-HAVING
-Subqueries
-Common Table Expressions (CTEs)
-Example business questions:
+---
 
-Total revenue by gender
-Revenue by product category
-Average purchase amount
-Customers using discounts
-Most preferred payment methods
-Seasonal shopping trends
-Shopping frequency analysis
-Step 5 — Power BI Dashboard
-Create an interactive dashboard to visualize customer shopping behavior.
+## 🛠️ Technologies Used
 
-Dashboard includes:
+| Technology | Purpose |
+|---|---|
+| **Python** | Data loading, cleaning, preprocessing, and exploration |
+| **Pandas** | Data manipulation and transformation |
+| **NumPy** | Numerical operations where required |
+| **SQL** | Data analysis and business queries |
+| **PostgreSQL / SQL Database** | Storing and querying structured customer data |
+| **Microsoft Power BI** | Data visualization and dashboard development |
+| **Power Query** | Data transformation and preparation in Power BI |
+| **DAX** | Measures and KPI calculations |
 
-Total Revenue
-Total Customers
-Average Purchase Amount
-Revenue by Category
-Revenue by Gender
-Revenue by Season
-Purchase Frequency
-Payment Method Distribution
-Discount Analysis
-Interactive Filters & Slicers
+---
 
-📈 Dashboard Preview
-Overall Dashboard
-Dashboard
+## 📁 Project Structure
 
-Revenue by Category
- 
-
-Revenue by Gender
-
-
-Shipping Type Analysis
- 
-
-📊 Key Insights
-Identified the highest revenue-generating product categories.
-Compared customer spending across different demographic groups.
-Evaluated the impact of discounts on purchasing behavior.
-Analyzed seasonal shopping trends.
-Explored customer purchasing frequency.
-Built an interactive dashboard for business decision-making.
-
-📁 Project Structure
-customer_shopping_behavior_analysis/
+```text
+Customer-Behavior-Dashboard/
 │
-├── dataset/
-│   └── customer_shopping_behavior.csv
+├── data/
+│   ├── raw/
+│   │   └── customer_data.csv
+│   │
+│   └── cleaned/
+│       └── customer_data_cleaned.csv
 │
-├── images/
-│   ├── dashboard.png
-│   ├── category1.png
-│   ├── category2.png
-│   ├── gender.png
-│   ├── shippingtype1.png
-│   └── shippingtype2.png
+├── python/
+│   └── data_cleaning.py
 │
-├── notebooks/
-│   └── Data_cleaning.ipynb
+├── sql/
+│   └── customer_analysis.sql
 │
 ├── powerbi/
 │   └── customer_behavior_dashboard.pbix
 │
-├── sql/
-│   └── customer_behavior_sql_queries.sql
-│
-├── .gitignore
-├── LICENSE
 └── README.md
+```
 
-▶️ How to Run
-1. Clone the Repository
-2. Install Required Libraries
-pip install pandas psycopg2
-3. Run the Python Notebook
+> File and folder names can be adjusted according to the final GitHub repository structure.
+
+---
+
+# 1. 📥 Loading the Dataset Using Python
+
+The first step is to load the raw customer dataset into Python.
+
+Pandas is used because it provides convenient functions for reading, inspecting, cleaning, and transforming tabular data.
+
+### Example
+
+```python
+import pandas as pd
+
+df = pd.read_csv("customer_data.csv")
+
+print(df.head())
+print(df.shape)
+print(df.info())
+```
+
+### Initial Data Inspection
+
+The dataset is checked for:
+
+- Number of rows and columns
+- Column names
+- Data types
+- Missing values
+- Duplicate records
+- Incorrect or inconsistent values
+- Possible outliers
+
+Example:
+
+```python
+print(df.info())
+print(df.isnull().sum())
+print(df.duplicated().sum())
+print(df.describe())
+```
+
+---
+
+# 2. 🧹 Data Cleaning Using Python
+
+Raw datasets often contain problems that can affect analysis and visualization.
+
+The cleaning process includes:
+
+### Missing Values
+
+```python
+df.isnull().sum()
+```
+
+Missing values can be handled according to the type of column and business requirement.
+
+### Duplicate Records
+
+```python
+df.drop_duplicates(inplace=True)
+```
+
+### Data Type Correction
+
+Columns such as customer IDs, purchase amounts, dates, and categorical fields are converted to appropriate data types.
+
+Example:
+
+```python
+df["purchase_amount"] = pd.to_numeric(
+    df["purchase_amount"],
+    errors="coerce"
+)
+```
+
+### Text Standardization
+
+Categorical values are standardized to avoid inconsistencies.
+
+```python
+df["category"] = df["category"].str.strip().str.title()
+```
+
+### Final Validation
+
+After cleaning, the dataset is checked again:
+
+```python
+print(df.info())
+print(df.isnull().sum())
+print(df.duplicated().sum())
+```
+
+The cleaned dataset is then used for SQL analysis and Power BI visualization.
+
+---
+
+# 3. 🗄️ SQL Data Analysis
+
+After cleaning the data, SQL is used to answer business-related questions.
+
+Typical analysis includes:
+
+### Total Customers
+
+```sql
+SELECT COUNT(DISTINCT customer_id) AS total_customers
+FROM customer;
+```
+
+### Average Purchase Amount
+
+```sql
+SELECT AVG(purchase_amount) AS average_purchase_amount
+FROM customer;
+```
+
+### Revenue by Category
+
+```sql
+SELECT
+    category,
+    SUM(purchase_amount) AS revenue
+FROM customer
+GROUP BY category
+ORDER BY revenue DESC;
+```
+
+### Sales by Category
+
+```sql
+SELECT
+    category,
+    COUNT(customer_id) AS sales
+FROM customer
+GROUP BY category
+ORDER BY sales DESC;
+```
+
+### Customer Distribution by Subscription Status
+
+```sql
+SELECT
+    subscription_status,
+    COUNT(customer_id) AS customers
+FROM customer
+GROUP BY subscription_status;
+```
+
+### Revenue by Age Group
+
+```sql
+SELECT
+    age_group,
+    SUM(purchase_amount) AS revenue
+FROM customer
+GROUP BY age_group
+ORDER BY revenue DESC;
+```
+
+SQL analysis helps convert raw customer records into meaningful business information before visualization.
+
+---
+
+# 4. 📊 Power BI Dashboard
+
+The cleaned data and analytical results are brought into **Microsoft Power BI** to create an interactive dashboard.
+
+### Dashboard Components
+
+#### KPI Cards
+
+The dashboard highlights:
+
+- Number of Customers
+- Average Purchase Amount
+- Average Review Rating
+
+#### Customer Subscription Analysis
+
+A donut chart shows the percentage of customers across different subscription statuses.
+
+#### Revenue Analysis
+
+Column and bar charts are used to compare revenue across:
+
+- Product categories
+- Age groups
+
+#### Sales Analysis
+
+Sales volume is compared across:
+
+- Product categories
+- Age groups
+
+#### Interactive Slicers
+
+Users can filter the dashboard using:
+
+- Subscription Status
+- Gender
+- Category
+- Shipping Type
+
+This allows users to explore customer behavior from different perspectives.
+
+---
+
+# 5. 📈 Key Business Questions
+
+The dashboard is designed to help answer questions such as:
+
+1. How many customers are present in the dataset?
+2. What is the average amount spent by customers?
+3. What is the average customer review rating?
+4. Which product categories generate the highest revenue?
+5. Which categories have the highest sales volume?
+6. How does revenue vary across different age groups?
+7. How are customers distributed by subscription status?
+8. How does customer behavior change based on gender?
+9. How does shipping type relate to customer purchasing behavior?
+10. Which customer segments should receive more business attention?
+
+---
+
+# 6. 💡 Business Insights
+
+The dashboard can be used by businesses to:
+
+- Understand customer purchasing patterns
+- Identify high-performing product categories
+- Compare revenue and sales volume
+- Analyze customer segments
+- Understand subscription behavior
+- Identify valuable customer groups
+- Support data-driven business decisions
+
+---
+
+# 7. 🚀 How to Run the Project
+
+### Step 1 — Clone the Repository
+
+```bash
+git clone <your-github-repository-url>
+cd Customer-Behavior-Dashboard
+```
+
+### Step 2 — Install Python Libraries
+
+```bash
+pip install pandas numpy
+```
+
+### Step 3 — Load the Dataset
+
+Place the raw dataset inside:
+
+```text
+data/raw/
+```
+
+### Step 4 — Run the Python Cleaning Script
+
+```bash
+python python/data_cleaning.py
+```
+
+The cleaned dataset will be generated inside:
+
+```text
+data/cleaned/
+```
+
+### Step 5 — Run SQL Queries
+
+Load the cleaned dataset into your SQL database and execute:
+
+```text
+sql/customer_analysis.sql
+```
+
+### Step 6 — Open the Power BI Dashboard
+
 Open:
 
-Data_cleaning.ipynb
-Execute all cells to:
-
-Load the dataset
-Perform EDA
-Clean the data
-Export data to PostgreSQL
-4. Execute SQL Queries
-Create a PostgreSQL database.
-Import the cleaned dataset.
-Run the SQL queries from:
-sql/customer_behavior_sql_queries.sql
-5. Open the Power BI Dashboard
-Launch:
-
+```text
 powerbi/customer_behavior_dashboard.pbix
-Refresh the data connection if required.
+```
 
-💼 Skills Demonstrated
-Data Cleaning
-Exploratory Data Analysis (EDA)
-Python Programming
-SQL Query Writing
-PostgreSQL
-Business Analytics
-Data Visualization
-Power BI Dashboard Development
-Business Insight Generation
-End-to-End Data Analytics Workflow
-📄 License
-This project is intended for learning and portfolio purposes.
+If required, update the data source path or database connection in Power BI.
 
-🙏 Acknowledgements
+Then refresh the dataset to view the latest results.
 
-This project was built as part of my learning journey by following the YouTube tutorial "COMPLETE Data Analytics Portfolio Project in 6 EASY Steps | Python + SQL + Power BI" by Amlan Mohanty. I implemented the data cleaning, SQL analysis, and Power BI dashboard while following the tutorial to gain hands-on experience with an end-to-end data analytics workflow.
+---
 
-About
+# 8. 📌 Skills Demonstrated
 
-End-to-end customer shopping behavior analysis using Python, PostgreSQL, SQL, and Power BI.
+This project demonstrates practical knowledge of:
 
-Resources
-Readme
-MIT license
-Activity
-Stars
-0 stars
-Watchers
-0 watching
-Forks
-0 forks
+- Python
+- Pandas
+- Data Cleaning
+- Data Preprocessing
+- Exploratory Data Analysis
+- SQL
+- Aggregations and GROUP BY
+- Business Analysis
+- Power BI
+- Data Visualization
+- Dashboard Design
+- KPI Development
+- Interactive Slicers
+- Data-Driven Decision Making
+
+---
+
+## 🎯 Project Objective
+
+The main objective of this project is to demonstrate an **end-to-end data analytics workflow**:
+
+> **Raw Data → Python Cleaning → SQL Analysis → Power BI Visualization → Business Insights**
+
+It combines programming, database querying, and business intelligence into one practical analytics project.
+
+---
+
+## 👨‍💻 Author
+
+**Shreyas Joshi**
+
+Final-Year Computer Science & Engineering Student
+
+Interested in:
+
+- Data Analytics
+- Python
+- SQL
+- Power BI
+- Business Intelligence
+- Web Development
+
+---
+
+## ⭐ Project Highlights
+
+- End-to-end analytics workflow
+- Python-based data cleaning
+- SQL-based business analysis
+- Interactive Power BI dashboard
+- KPI-driven reporting
+- Customer segmentation analysis
+- Category and age-group analysis
+- Interactive filtering
+
+---
+
+## 📄 License
+
+This project is created for **educational, portfolio, and learning purposes**.
